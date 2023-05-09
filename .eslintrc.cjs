@@ -1,4 +1,4 @@
+process.env.ESLINT_TSCONFIG = 'tsconfig.json'
 module.exports = {
-  root: true,
-  extends: ["@zeal-ui/eslint-config"],
-};
+  extends: ['@chansee97/eslint-config-vue'],
+}

@@ -1,41 +1,45 @@
 {
   "name": "zeal-ui",
   "version": "0.0.1",
+  "packageManager": "pnpm@8.2.0",
   "description": "",
   "author": "chansee97",
   "license": "MIT",
-  "packageManager": "pnpm@8.2.0",
   "keywords": [],
   "main": "index.js",
   "scripts": {
     "dev": "pnpm -C play dev",
     "docs": "pnpm -C docs dev",
-    "lint": "eslint --ext .js,.ts,.tsx,.vue",
-    "precommit": "lint-staged -c ./.husky/.lintstagedrc -q",
-    "prepare": "husky install"
-  },
-  "lint-staged": {
-    "*.{vue,js,ts,jsx,tsx,json}": "eslint --fix"
+    "lint": "eslint . --fix"
   },
   "dependencies": {
     "@zeal-ui/components": "workspace:^",
     "@zeal-ui/hooks": "workspace:^"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.6.0",
-    "@commitlint/config-conventional": "^17.6.0",
-    "@types/node": "^18.15.11",
-    "@zeal-ui/eslint-config": "workspace:^",
+    "@chansee97/eslint-config-vue": "^0.2.0",
+    "@chansee97/stylelint-config": "^0.2.0",
+    "@types/node": "^20.1.1",
     "eslint": "^8.38.0",
-    "husky": "^8.0.3",
     "lint-staged": "^13.2.1",
-    "stylelint": "^15.4.0",
-    "stylelint-config-html": "^1.1.0",
-    "stylelint-config-recess-order": "^4.0.0",
-    "stylelint-config-recommended-vue": "^1.4.0",
-    "stylelint-config-standard": "^32.0.0",
-    "stylelint-order": "^6.0.3",
+    "simple-git-hooks": "^2.8.1",
+    "stylelint": "^15.6.1",
     "typescript": "^5.0.4",
     "vue": "^3.2.47"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,,mjs,ts,tsx,json,,md,yml}": [
+      "eslint --fix"
+    ],
+    "*.{css,scss,less,html}": [
+      "stylelint --fix"
+    ],
+    "*.vue": [
+      "eslint --fix",
+      "stylelint --fix"
+    ]
   }
 }
