@@ -1,0 +1,17 @@
+input{
+  padding: 5px 10px;
+  border: none;
+  border: 1px solid #555a;
+  border-radius: 4px;
+  outline: 0;
+  box-shadow: 0 0 2px transparent;
+  transition: all .3s;
+}
+
+input:active,input:focus{
+  box-shadow: 0 0 2px blue;
+}
+
+input[type="text"], input[type="password"], textarea {
+  caret-color: blue;
+}

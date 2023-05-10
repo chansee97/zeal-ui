@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Zbutton } from '../packages/components/index'
+import { ZButton, ZInput } from '../packages/components/index'
 
 const count = ref(0)
 </script>
@@ -10,7 +10,9 @@ const count = ref(0)
     play===={{ count }}
   </div>
 
-  <Zbutton @click="count++">
+  <ZButton @click="count++">
     ok1
-  </Zbutton>
+  </ZButton>
+
+  <ZInput />
 </template>

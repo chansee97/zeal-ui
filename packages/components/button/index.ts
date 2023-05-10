@@ -1,3 +1,3 @@
 import Button from './button.vue'
 
-export { Button as Zbutton }
+export { Button as ZButton }
