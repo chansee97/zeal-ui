@@ -1,3 +1,9 @@
+<script lang="ts">
+export default {
+  name: 'Progress',
+}
+</script>
+
 <script setup lang="ts">
 interface Props {
   percentage: number

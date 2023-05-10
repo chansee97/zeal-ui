@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { ZButton, ZInput, ZProgress } from '../packages/components/index'
+
+// import { ZButton, ZInput, ZProgress } from '../packages/components/index'
 
 const count = ref(0)
 function add() {
@@ -15,11 +16,11 @@ function add() {
     play===={{ count }}
   </div>
 
-  <ZButton @click="add">
+  <z-button @click="add">
     ok1
-  </ZButton>
+  </z-button>
 
-  <ZInput />
+  <z-input placeholder="请输入..." />
 
-  <ZProgress :percentage="count" />
+  <z-progress :percentage="count" />
 </template>

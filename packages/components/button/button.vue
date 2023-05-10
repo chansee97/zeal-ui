@@ -1,5 +1,7 @@
-<script setup lang="ts">
-
+<script lang="ts">
+export default {
+  name: 'Button',
+}
 </script>
 
 <template>

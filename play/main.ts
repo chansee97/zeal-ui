@@ -1,4 +1,8 @@
 import { createApp } from 'vue'
+import { zeal } from '../packages/components/index'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+
+app.use(zeal)
+app.mount('#app')
