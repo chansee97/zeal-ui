@@ -5,9 +5,5 @@ export default {
 </script>
 
 <template>
-  <input type="text">
+  <input type="text" class="z-input">
 </template>
-
-<style scoped>
-@import url('./input.css')
-</style>

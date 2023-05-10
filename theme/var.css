@@ -1,0 +1,17 @@
+:root{
+  /* 圆角 */
+  --zeal-border-radius:4px;
+  --zeal-border-radius-full:999px;
+
+  /* primary */
+  --zeal-primary-color: var(--zeal-brand-color-6); /* 无状态 */
+  --zeal-primary-color-hover: var(--zeal-brand-color-4); /* hover */
+  --zeal-primary-color-focus: var(--zeal-brand-color-5); /* focus态，包括鼠标和键盘 */
+  --zeal-primary-color-active: var(--zeal-brand-color-8); /* 点击态 */
+  --zeal-primary-color-disabled: var(--zeal-brand-color-2); /* 禁用态 */
+
+  /* Button */
+  --zeal-button-height:30px;
+  --zeal-button-font-size:14px;
+  --zeal-button-padding:0 10px;
+}

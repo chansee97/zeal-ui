@@ -1,0 +1,28 @@
+@import "../../../theme/index.css";
+
+.z-input {
+  padding: 5px 10px;
+  border: none;
+  border: 1px solid #ccc;
+  border-radius: var(--zeal-border-radius);
+  outline: 0;
+  box-shadow: 0 0 0 0 transparent;
+  transition: all 0.3s;
+
+  &:hover,
+  &:active,
+  &:focus{
+    border: 1px solid var(--zeal-primary-color);
+  }
+
+
+  &:active,
+  &:focus {
+    box-shadow: 0 0 4px var(--zeal-primary-color) ;
+  }
+
+  &[type="text"],
+  &[type="password"] {
+    caret-color: var(--zeal-primary-color);
+  }
+}

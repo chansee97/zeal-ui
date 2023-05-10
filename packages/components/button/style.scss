@@ -1,0 +1,56 @@
+@import "../../../theme/index.css";
+
+.z-btn {
+  height: var(--zeal-button-height);
+  padding: var(--zeal-button-padding);
+  font-size:  var(--zeal-button-font-size);
+  color: #fff;
+  cursor: pointer;
+  background-color: var(--zeal-primary-color);
+  border: none;
+  border-radius: var(--zeal-border-radius);
+  outline: none;
+  transition: all 0.3s;
+
+  & + .z-btn {
+    margin-left: 8px;
+  }
+
+  &:hover {
+    background-color: var(--zeal-primary-color-hover);
+  }
+
+  &:active {
+    background-color: var(--zeal-primary-color-active);
+  }
+
+  &:disabled,
+  &:disabled:hover,
+  &:disabled:active {
+    cursor: not-allowed;
+    background-color: var(--zeal-primary-color-disabled);
+    opacity: 0.8;
+  }
+
+  &.z-btn-round {
+    border-radius: var(--zeal-border-radius-full);
+  }
+
+  &.z-btn-size-small {
+    --zeal-button-height: 28px;
+    --zeal-button-font-size:12px;
+    --zeal-button-padding:0px 10px;
+  }
+
+  &.z-btn-size-medium {
+    --zeal-button-height: 34px;
+    --zeal-button-font-size:14px;
+    --zeal-button-padding:0px 14px;
+  }
+
+  &.z-btn-size-large {
+    --zeal-button-height: 40px;
+    --zeal-button-font-size:18px;
+    --zeal-button-padding:0px 18px;
+  }
+}
