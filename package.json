@@ -8,8 +8,8 @@
   "keywords": [],
   "main": "index.js",
   "scripts": {
-    "dev": "pnpm -C play dev",
-    "docs": "pnpm -C docs dev",
+    "dev:play": "pnpm -C play dev",
+    "dev:docs": "pnpm -C packages/docs dev",
     "lint": "eslint . --fix"
   },
   "dependencies": {

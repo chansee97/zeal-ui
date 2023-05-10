@@ -39,13 +39,13 @@ importers:
         specifier: ^3.2.47
         version: 3.2.47
 
-  docs:
+  packages/components: {}
+
+  packages/docs:
     devDependencies:
       vitepress:
         specifier: 1.0.0-alpha.75
         version: 1.0.0-alpha.75(@algolia/client-search@4.17.0)(@types/node@20.1.1)
-
-  packages/components: {}
 
   packages/hooks: {}
 
