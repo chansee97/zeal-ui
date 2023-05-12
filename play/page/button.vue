@@ -55,6 +55,7 @@ const _disabled = ref(0)
     <z-button circle round>
       button
     </z-button>
+    <z-button circle />
     <p>disabled | nativeType | strong | tag</p>
     <div>
       <z-button disabled @click="_disabled++">

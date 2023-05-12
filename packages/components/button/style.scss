@@ -1,4 +1,6 @@
-.z-btn {
+$namespace: "z";
+
+.#{$namespace}-btn {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -6,31 +8,32 @@
   height: var(--zeal-button-height);
   padding: var(--zeal-button-padding);
   font-size: var(--zeal-button-font-size);
-  color: var(--zeal-b-color);
+  color: var(--zeal-text-color);
   text-align: center;
+  vertical-align: bottom;
   cursor: pointer;
   user-select: none;
   background-color: var(--zeal-button-bg-color);
   border: none;
+  border-color: var(--zeal-b-color);
   border-radius: var(--zeal-border-radius);
   outline: none;
   transition: all 0.3s;
-  -webkit-text-fill-color: var(--zeal-text-color);
 
   & + & {
-    margin-left: 8px;
+    margin-left: var(--zeal-button-span);
   }
 
   &:hover {
-    -webkit-text-fill-color: var(--zeal-text-color);
-    color: var(--zeal-button-bg-color-hover);
+    color: var(--zeal-text-color-hover);
     background-color: var(--zeal-button-bg-color-hover);
+    border-color: var(--zeal-b-color-hover);
   }
 
   &:active {
-    -webkit-text-fill-color: var(--zeal-text-color);
-    color: var(--zeal-button-bg-color-active);
+    color: var(--zeal-text-color-active);
     background-color: var(--zeal-button-bg-color-active);
+    border-color: var(--zeal-b-color-active);
   }
 
   &:disabled,
@@ -39,7 +42,11 @@
     color: var(--zeal-text-color-disabled);
     cursor: not-allowed;
     background-color: var(--zeal-button-bg-color-disabled);
-    border-color: transparent;
+    border-color: var(--zeal-b-color-disabled);
+  }
+
+  &__label {
+    z-index: 1;
   }
 
   &__border {
@@ -47,6 +54,7 @@
     inset: 0;
     pointer-events: none;
     border: 1px solid;
+    border-color: inherit;
     border-radius: inherit;
   }
 
@@ -60,31 +68,27 @@
     &:focus,
     &:active,
     &.active {
-      -webkit-text-fill-color: unset;
       background-color: transparent;
     }
   }
 
-  &__ping{
+  &__wave {
     position: absolute;
     inset: 0;
-    z-index:-1;
+    z-index: 0;
     pointer-events: none;
-
-    // background-color: blueviolet;
     border-radius: inherit;
-    box-shadow: 3px 3px blueviolet;
 
-    // animation: ping 1s cubic-bezier(0,0,.2,1) infinite;
+    &.active {
+      animation: wave 0.6s cubic-bezier(0, 0, 0.2, 1);
+    }
   }
 
-  @keyframes ping {
+  @keyframes wave {
     75%,
     100% {
-      box-shadow: 0 0 blueviolet;
+      box-shadow: 0 0 0 4px var(--zeal-button-wave-color);
       opacity: 0;
-
-      // transform: scale(1.2);
     }
   }
 
@@ -98,6 +102,7 @@
     --zeal-text-color: var(--zeal-gray-1);
     --zeal-text-color-hover: var(--zeal-gray-1);
     --zeal-text-color-active: var(--zeal-gray-1);
+    --zeal-button-wave-color: var(--zeal-brand-color-6);
   }
 
   &--success {
@@ -110,6 +115,7 @@
     --zeal-text-color: var(--zeal-gray-1);
     --zeal-text-color-hover: var(--zeal-gray-1);
     --zeal-text-color-active: var(--zeal-gray-1);
+    --zeal-button-wave-color: var(--zeal-success-6);
   }
 
   &--info {
@@ -122,6 +128,7 @@
     --zeal-text-color: var(--zeal-gray-1);
     --zeal-text-color-hover: var(--zeal-gray-1);
     --zeal-text-color-active: var(--zeal-gray-1);
+    --zeal-button-wave-color: var(--zeal-info-6);
   }
 
   &--warning {
@@ -134,6 +141,7 @@
     --zeal-text-color: var(--zeal-gray-1);
     --zeal-text-color-hover: var(--zeal-gray-1);
     --zeal-text-color-active: var(--zeal-gray-1);
+    --zeal-button-wave-color: var(--zeal-warning-6);
   }
 
   &--error {
@@ -146,18 +154,11 @@
     --zeal-text-color: var(--zeal-gray-1);
     --zeal-text-color-hover: var(--zeal-gray-1);
     --zeal-text-color-active: var(--zeal-gray-1);
+    --zeal-button-wave-color: var(--zeal-error-6);
   }
 
   &--ghost {
     background-color: transparent;
-
-    &,
-    &:hover,
-    &:focus,
-    &:active,
-    &.active {
-      -webkit-text-fill-color: unset;
-    }
 
     &:hover {
       background-color: rgb(255 255 255 / 10%);

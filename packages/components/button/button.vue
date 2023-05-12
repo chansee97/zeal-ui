@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 
 interface Props {
   round?: boolean
@@ -13,7 +13,6 @@ interface Props {
   dashed?: boolean
   nativeType?: 'button' | 'submit' | 'reset'
   strong?: boolean
-  tag?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -27,7 +26,6 @@ const props = withDefaults(defineProps<Props>(), {
   dashed: false,
   nativeType: 'button',
   strong: false,
-  tag: 'button',
 })
 
 const sizeClass = computed(() => {
@@ -38,9 +36,19 @@ const typeClass = computed(() => {
   return `z-btn--${props.type}`
 })
 
-const _tag = computed(() => {
-  return props.tag || 'button'
-})
+const clickActiveClass = ref('')
+const setClickAnimation = () => {
+  if (clickActiveClass.value)
+    clickActiveClass.value = ''
+
+  clickActiveClass.value = 'active'
+  setTimeout(() => {
+    clickActiveClass.value = ''
+  }, 600)
+}
+function onClick(e: MouseEvent) {
+  setClickAnimation()
+}
 </script>
 
 <script lang="ts">
@@ -63,11 +71,12 @@ export default {
       'z-btn--dashed': props.dashed,
       'z-btn--strong': props.strong,
     }, sizeClass, typeClass]"
+    @click="onClick"
   >
-    <span>
+    <span class="z-btn__label">
       <slot />
     </span>
+    <div aria-hidden="true" class="z-btn__wave" :class="[clickActiveClass]" />
     <div aria-hidden="true" class="z-btn__border" />
-    <div aria-hidden="true" class="z-btn__ping" />
   </button>
 </template>

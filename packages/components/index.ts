@@ -3,7 +3,7 @@ import { Input } from './input'
 import { Button } from './button'
 import { Progress } from './progress'
 
-import '../../theme/index.css'
+import '../../theme/index.scss'
 
 const components = [
   Input, Button, Progress,
