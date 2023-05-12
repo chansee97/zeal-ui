@@ -1,17 +1,40 @@
-:root{
+:root {
   /* 圆角 */
-  --zeal-border-radius:4px;
-  --zeal-border-radius-full:999px;
+  --zeal-border-radius: 3px;
+  --zeal-border-radius-round: 999px;
+  --zeal-border-radius-circle: 50%;
 
   /* primary */
   --zeal-primary-color: var(--zeal-brand-color-6); /* 无状态 */
   --zeal-primary-color-hover: var(--zeal-brand-color-4); /* hover */
-  --zeal-primary-color-focus: var(--zeal-brand-color-5); /* focus态，包括鼠标和键盘 */
+  --zeal-primary-color-focus: var(
+    --zeal-brand-color-5
+  ); /* focus态，包括鼠标和键盘 */
+
   --zeal-primary-color-active: var(--zeal-brand-color-8); /* 点击态 */
-  --zeal-primary-color-disabled: var(--zeal-brand-color-2); /* 禁用态 */
+  --zeal-primary-color-disabled: var(--zeal-brand-color-3); /* 禁用态 */
+
+  /* text */
+  --zeal-text-color: var(--zeal-gray-10);
+  --zeal-text-color-hover: var(--zeal-brand-color-6);
+  --zeal-text-color-active: var(--zeal-brand-color-7);
+  --zeal-text-color-focus:var(--zeal-brand-color-8);
+  --zeal-text-color-disabled: var(--zeal-gray-6);
+
+  /* border */
+  --zeal-b-color: var(--zeal-gray-3);
+  --zeal-b-color-hover: var(--zeal-brand-color-6);
+  --zeal-b-color-active: var(--zeal-brand-color-7);
+  --zeal-b-color-focus: var(--zeal-brand-color-8);
+  --zeal-b-color-disabled: var(--zeal-gray-3);
 
   /* Button */
-  --zeal-button-height:30px;
-  --zeal-button-font-size:14px;
-  --zeal-button-padding:0 10px;
+  --zeal-button-height: 30px;
+  --zeal-button-font-size: 14px;
+  --zeal-button-padding: 0 10px;
+  --zeal-button-bg-color: var(--zeal-gray-1);
+  --zeal-button-bg-color-hover: var(--zeal-brand-color-1);
+  --zeal-button-bg-color-active: var(--zeal-brand-color-1);
+  --zeal-button-bg-color-focus: var(--zeal-brand-color-4);
+  --zeal-button-bg-color-disabled: var(--zeal-gray-3);
 }

@@ -1,5 +1,6 @@
 :root,
 :root.light {
+  /* brand */
   --zeal-brand-color-1: #e8f7ff;
   --zeal-brand-color-2: #c3e7fe;
   --zeal-brand-color-3: #9fd4fd;
@@ -10,4 +11,66 @@
   --zeal-brand-color-8: #114ba3;
   --zeal-brand-color-9: #063078;
   --zeal-brand-color-10: #001a4d;
+
+  /* success */
+  --zeal-success-1: #e8ffee;
+  --zeal-success-2: #bdf5cd;
+  --zeal-success-3: #95ebb0;
+  --zeal-success-4: #70e097;
+  --zeal-success-5: #4ed682;
+  --zeal-success-6: #2ecc71;
+  --zeal-success-7: #1dac5d;
+  --zeal-success-8: #108c4c;
+  --zeal-success-9: #066c3b;
+  --zeal-success-10: #004d2a;
+
+  /* info */
+  --zeal-info-1: #e8f3ff;
+  --zeal-info-2: #bedaff;
+  --zeal-info-3: #94bfff;
+  --zeal-info-4: #6aa1ff;
+  --zeal-info-5: #4080ff;
+  --zeal-info-6: #165dff;
+  --zeal-info-7: #0e42d2;
+  --zeal-info-8: #072ca6;
+  --zeal-info-9: #031a79;
+  --zeal-info-10: #000d4d;
+
+  /* warning */
+  --zeal-warning-1: #fff7e8;
+  --zeal-warning-2: #ffe4ba;
+  --zeal-warning-3: #ffcf8b;
+  --zeal-warning-4: #ffb65d;
+  --zeal-warning-5: #ff9a2e;
+  --zeal-warning-6: #ff7d00;
+  --zeal-warning-7: #d25f00;
+  --zeal-warning-8: #a64500;
+  --zeal-warning-9: #792e00;
+  --zeal-warning-10: #4d1b00;
+
+  /* error */
+  --zeal-error-1: #ffece8;
+  --zeal-error-2: #fdcdc5;
+  --zeal-error-3: #fbaca3;
+  --zeal-error-4: #f98981;
+  --zeal-error-5: #f76560;
+  --zeal-error-6: #f53f3f;
+  --zeal-error-7: #cb272d;
+  --zeal-error-8: #a1151e;
+  --zeal-error-9: #770813;
+  --zeal-error-10: #4d000a;
+
+  /* gray */
+  --zeal-white: #fff;
+  --zeal-gray-1: #f7f8fa;
+  --zeal-gray-2: #f2f3f5;
+  --zeal-gray-3: #e5e6eb;
+  --zeal-gray-4: #c9cdd4;
+  --zeal-gray-5: #a9aeb8;
+  --zeal-gray-6: #86909c;
+  --zeal-gray-7: #6b7785;
+  --zeal-gray-8: #4e5969;
+  --zeal-gray-9: #272e3b;
+  --zeal-gray-10: #1d2129;
+  --zeal-black: #000;
 }

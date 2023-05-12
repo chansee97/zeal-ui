@@ -1,56 +1,205 @@
-@import "../../../theme/index.css";
-
 .z-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   height: var(--zeal-button-height);
   padding: var(--zeal-button-padding);
-  font-size:  var(--zeal-button-font-size);
-  color: #fff;
+  font-size: var(--zeal-button-font-size);
+  color: var(--zeal-b-color);
+  text-align: center;
   cursor: pointer;
-  background-color: var(--zeal-primary-color);
+  user-select: none;
+  background-color: var(--zeal-button-bg-color);
   border: none;
   border-radius: var(--zeal-border-radius);
   outline: none;
   transition: all 0.3s;
+  -webkit-text-fill-color: var(--zeal-text-color);
 
-  & + .z-btn {
+  & + & {
     margin-left: 8px;
   }
 
   &:hover {
-    background-color: var(--zeal-primary-color-hover);
+    -webkit-text-fill-color: var(--zeal-text-color);
+    color: var(--zeal-button-bg-color-hover);
+    background-color: var(--zeal-button-bg-color-hover);
   }
 
   &:active {
-    background-color: var(--zeal-primary-color-active);
+    -webkit-text-fill-color: var(--zeal-text-color);
+    color: var(--zeal-button-bg-color-active);
+    background-color: var(--zeal-button-bg-color-active);
   }
 
   &:disabled,
   &:disabled:hover,
   &:disabled:active {
+    color: var(--zeal-text-color-disabled);
     cursor: not-allowed;
-    background-color: var(--zeal-primary-color-disabled);
-    opacity: 0.8;
+    background-color: var(--zeal-button-bg-color-disabled);
+    border-color: transparent;
   }
 
-  &.z-btn-round {
-    border-radius: var(--zeal-border-radius-full);
+  &__border {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border: 1px solid;
+    border-radius: inherit;
   }
 
-  &.z-btn-size-small {
+  &--dashed &__border {
+    border-style: dashed;
+  }
+
+  &--dashed {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      -webkit-text-fill-color: unset;
+      background-color: transparent;
+    }
+  }
+
+  &__ping{
+    position: absolute;
+    inset: 0;
+    z-index:-1;
+    pointer-events: none;
+
+    // background-color: blueviolet;
+    border-radius: inherit;
+    box-shadow: 3px 3px blueviolet;
+
+    // animation: ping 1s cubic-bezier(0,0,.2,1) infinite;
+  }
+
+  @keyframes ping {
+    75%,
+    100% {
+      box-shadow: 0 0 blueviolet;
+      opacity: 0;
+
+      // transform: scale(1.2);
+    }
+  }
+
+  &--primary {
+    --zeal-button-bg-color: var(--zeal-brand-color-6);
+    --zeal-button-bg-color-hover: var(--zeal-brand-color-5);
+    --zeal-button-bg-color-active: var(--zeal-brand-color-7);
+    --zeal-b-color: var(--zeal-brand-color-6);
+    --zeal-b-color-hover: var(--zeal-brand-color-5);
+    --zeal-b-color-active: var(--zeal-brand-color-7);
+    --zeal-text-color: var(--zeal-gray-1);
+    --zeal-text-color-hover: var(--zeal-gray-1);
+    --zeal-text-color-active: var(--zeal-gray-1);
+  }
+
+  &--success {
+    --zeal-button-bg-color: var(--zeal-success-6);
+    --zeal-button-bg-color-hover: var(--zeal-success-5);
+    --zeal-button-bg-color-active: var(--zeal-success-7);
+    --zeal-b-color: var(--zeal-success-6);
+    --zeal-b-color-hover: var(--zeal-success-5);
+    --zeal-b-color-active: var(--zeal-success-7);
+    --zeal-text-color: var(--zeal-gray-1);
+    --zeal-text-color-hover: var(--zeal-gray-1);
+    --zeal-text-color-active: var(--zeal-gray-1);
+  }
+
+  &--info {
+    --zeal-button-bg-color: var(--zeal-info-6);
+    --zeal-button-bg-color-hover: var(--zeal-info-5);
+    --zeal-button-bg-color-active: var(--zeal-info-7);
+    --zeal-b-color: var(--zeal-info-6);
+    --zeal-b-color-hover: var(--zeal-info-5);
+    --zeal-b-color-active: var(--zeal-info-7);
+    --zeal-text-color: var(--zeal-gray-1);
+    --zeal-text-color-hover: var(--zeal-gray-1);
+    --zeal-text-color-active: var(--zeal-gray-1);
+  }
+
+  &--warning {
+    --zeal-button-bg-color: var(--zeal-warning-6);
+    --zeal-button-bg-color-hover: var(--zeal-warning-5);
+    --zeal-button-bg-color-active: var(--zeal-warning-7);
+    --zeal-b-color: var(--zeal-warning-6);
+    --zeal-b-color-hover: var(--zeal-warning-5);
+    --zeal-b-color-active: var(--zeal-warning-7);
+    --zeal-text-color: var(--zeal-gray-1);
+    --zeal-text-color-hover: var(--zeal-gray-1);
+    --zeal-text-color-active: var(--zeal-gray-1);
+  }
+
+  &--error {
+    --zeal-button-bg-color: var(--zeal-error-6);
+    --zeal-button-bg-color-hover: var(--zeal-error-5);
+    --zeal-button-bg-color-active: var(--zeal-error-7);
+    --zeal-b-color: var(--zeal-error-6);
+    --zeal-b-color-hover: var(--zeal-error-5);
+    --zeal-b-color-active: var(--zeal-error-7);
+    --zeal-text-color: var(--zeal-gray-1);
+    --zeal-text-color-hover: var(--zeal-gray-1);
+    --zeal-text-color-active: var(--zeal-gray-1);
+  }
+
+  &--ghost {
+    background-color: transparent;
+
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      -webkit-text-fill-color: unset;
+    }
+
+    &:hover {
+      background-color: rgb(255 255 255 / 10%);
+    }
+
+    &:active,
+    &:focus {
+      background-color: rgb(255 255 255 / 10%);
+    }
+  }
+
+  &--round {
+    border-radius: var(--zeal-border-radius-round);
+  }
+
+  &--circle {
+    border-radius: var(--zeal-border-radius-circle);
+  }
+
+  &--block {
+    width: 100%;
+  }
+
+  &--strong {
+    font-weight: bold;
+  }
+
+  &--small {
     --zeal-button-height: 28px;
-    --zeal-button-font-size:12px;
-    --zeal-button-padding:0px 10px;
+    --zeal-button-font-size: 12px;
+    --zeal-button-padding: 0px 14px;
   }
 
-  &.z-btn-size-medium {
-    --zeal-button-height: 34px;
-    --zeal-button-font-size:14px;
-    --zeal-button-padding:0px 14px;
+  &--medium {
+    --zeal-button-height: 32px;
+    --zeal-button-font-size: 14px;
+    --zeal-button-padding: 0px 16px;
   }
 
-  &.z-btn-size-large {
+  &--large {
     --zeal-button-height: 40px;
-    --zeal-button-font-size:18px;
-    --zeal-button-padding:0px 18px;
+    --zeal-button-font-size: 18px;
+    --zeal-button-padding: 0px 20px;
   }
 }

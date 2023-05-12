@@ -15,6 +15,6 @@ export default {
 
 <template>
   <div class="z-progress">
-    <div class="z-progress-fill" :style="{ 'max-width': `${props.percentage}%` }" />
+    <div class="z-progress__fill" :style="{ 'max-width': `${props.percentage}%` }" />
   </div>
 </template>
