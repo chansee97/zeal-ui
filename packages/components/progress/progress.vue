@@ -5,12 +5,10 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   percentage: 0,
 })
-</script>
 
-<script lang="ts">
-export default {
+defineOptions({
   name: 'Progress',
-}
+})
 </script>
 
 <template>

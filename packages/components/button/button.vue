@@ -1,82 +1,69 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import { Loading, Wave } from '../_private'
+import { prefix } from '../config'
+import type { ButtonProps } from './props'
 
-interface Props {
-  round?: boolean
-  circle?: boolean
-  disabled?: boolean
-  size?: 'small' | 'medium' | 'large'
-  type?: 'default' | 'primary' | 'success' | 'info' | 'warning' | 'error'
-  autofocus?: boolean
-  block?: boolean
-  ghost?: boolean
-  dashed?: boolean
-  nativeType?: 'button' | 'submit' | 'reset'
-  strong?: boolean
-}
-
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<ButtonProps>(), {
   round: false,
   circle: false,
   disabled: false,
-  size: 'medium',
-  type: 'default',
   autofocus: false,
   ghost: false,
   dashed: false,
-  nativeType: 'button',
   strong: false,
+  text: false,
+  loading: false,
+  size: 'medium',
+  type: 'default',
+  nativeType: 'button',
+  tag: 'button',
 })
 
-const sizeClass = computed(() => {
-  return `z-btn--${props.size}`
+const emit = defineEmits<{
+  click: [e: MouseEvent]
+}>()
+
+defineOptions({
+  name: 'Btn',
 })
 
-const typeClass = computed(() => {
-  return `z-btn--${props.type}`
-})
+const waveRef = ref()
+function handleClick(e: MouseEvent) {
+  if (props.disabled)
+    return
 
-const clickActiveClass = ref('')
-const setClickAnimation = () => {
-  if (clickActiveClass.value)
-    clickActiveClass.value = ''
+  waveRef.value.play()
 
-  clickActiveClass.value = 'active'
-  setTimeout(() => {
-    clickActiveClass.value = ''
-  }, 600)
-}
-function onClick(e: MouseEvent) {
-  setClickAnimation()
-}
-</script>
-
-<script lang="ts">
-export default {
-  name: 'Button',
+  emit('click', e)
 }
 </script>
 
 <template>
-  <button
+  <component
+    :is="props.tag"
     :type="nativeType" :role="nativeType"
     :aria-disabled="disabled" :disabled="disabled"
     :autofocus="autofocus"
     class="z-btn"
-    :class="[{
-      'z-btn--round': props.round,
-      'z-btn--circle': props.circle,
-      'z-btn--block': props.block,
-      'z-btn--ghost': props.ghost,
-      'z-btn--dashed': props.dashed,
-      'z-btn--strong': props.strong,
-    }, sizeClass, typeClass]"
-    @click="onClick"
+    :class="[
+      `${prefix}-btn`,
+      `${prefix}-btn--${props.size}`,
+      `${prefix}-btn--${props.type}`,
+      props.round && `${prefix}-btn--round`,
+      props.circle && `${prefix}-btn--circle`,
+      props.block && `${prefix}-btn--block`,
+      props.ghost && `${prefix}-btn--ghost`,
+      props.dashed && `${prefix}-btn--dashed`,
+      props.strong && `${prefix}-btn--strong`,
+      (props.disabled || props.loading) && `${prefix}-btn--disabled`,
+      props.text && `${prefix}-btn--text`,
+    ]"
+    @click="handleClick "
   >
-    <span class="z-btn__label">
-      <slot />
-    </span>
-    <div aria-hidden="true" class="z-btn__wave" :class="[clickActiveClass]" />
-    <div aria-hidden="true" class="z-btn__border" />
-  </button>
+    <Loading :show="props.loading" />
+    <slot name="default" />
+    <div v-if="!props.text" aria-hidden="true" :class="[`${prefix}-btn__border`]" />
+    <Wave v-if="!props.text" ref="waveRef" />
+  </component>
 </template>

@@ -18,35 +18,30 @@ $namespace: "z";
   border-color: var(--zeal-b-color);
   border-radius: var(--zeal-border-radius);
   outline: none;
-  transition: all 0.3s;
+  transition: all 0.3s ease-in;
+
+  $self: &;
 
   & + & {
     margin-left: var(--zeal-button-span);
   }
 
-  &:hover {
+  &--disabled {
+    cursor: not-allowed;
+    opacity: var(--zeal-opacity-disabled);
+  }
+
+  &:focus:not(&--disabled),
+  &:hover:not(&--disabled) {
     color: var(--zeal-text-color-hover);
     background-color: var(--zeal-button-bg-color-hover);
     border-color: var(--zeal-b-color-hover);
   }
 
-  &:active {
+  &:active:not(&--disabled) {
     color: var(--zeal-text-color-active);
     background-color: var(--zeal-button-bg-color-active);
     border-color: var(--zeal-b-color-active);
-  }
-
-  &:disabled,
-  &:disabled:hover,
-  &:disabled:active {
-    color: var(--zeal-text-color-disabled);
-    cursor: not-allowed;
-    background-color: var(--zeal-button-bg-color-disabled);
-    border-color: var(--zeal-b-color-disabled);
-  }
-
-  &__label {
-    z-index: 1;
   }
 
   &__border {
@@ -56,40 +51,6 @@ $namespace: "z";
     border: 1px solid;
     border-color: inherit;
     border-radius: inherit;
-  }
-
-  &--dashed &__border {
-    border-style: dashed;
-  }
-
-  &--dashed {
-    &,
-    &:hover,
-    &:focus,
-    &:active,
-    &.active {
-      background-color: transparent;
-    }
-  }
-
-  &__wave {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    border-radius: inherit;
-
-    &.active {
-      animation: wave 0.6s cubic-bezier(0, 0, 0.2, 1);
-    }
-  }
-
-  @keyframes wave {
-    75%,
-    100% {
-      box-shadow: 0 0 0 4px var(--zeal-button-wave-color);
-      opacity: 0;
-    }
   }
 
   &--primary {
@@ -103,6 +64,14 @@ $namespace: "z";
     --zeal-text-color-hover: var(--zeal-gray-1);
     --zeal-text-color-active: var(--zeal-gray-1);
     --zeal-button-wave-color: var(--zeal-brand-color-6);
+
+    &#{$self}--text,
+    &#{$self}--dashed,
+    &#{$self}--ghost {
+      --zeal-text-color: var(--zeal-brand-color-6);
+      --zeal-text-color-hover: var(--zeal-brand-color-5);
+      --zeal-text-color-active: var(--zeal-brand-color-7);
+    }
   }
 
   &--success {
@@ -116,6 +85,14 @@ $namespace: "z";
     --zeal-text-color-hover: var(--zeal-gray-1);
     --zeal-text-color-active: var(--zeal-gray-1);
     --zeal-button-wave-color: var(--zeal-success-6);
+
+    &#{$self}--text,
+    &#{$self}--dashed,
+    &#{$self}--ghost {
+      --zeal-text-color: var(--zeal-success-6);
+      --zeal-text-color-hover: var(--zeal-success-5);
+      --zeal-text-color-active: var(--zeal-success-7);
+    }
   }
 
   &--info {
@@ -129,6 +106,14 @@ $namespace: "z";
     --zeal-text-color-hover: var(--zeal-gray-1);
     --zeal-text-color-active: var(--zeal-gray-1);
     --zeal-button-wave-color: var(--zeal-info-6);
+
+    &#{$self}--text,
+    &#{$self}--dashed,
+    &#{$self}--ghost {
+      --zeal-text-color: var(--zeal-info-6);
+      --zeal-text-color-hover: var(--zeal-info-5);
+      --zeal-text-color-active: var(--zeal-info-7);
+    }
   }
 
   &--warning {
@@ -142,6 +127,14 @@ $namespace: "z";
     --zeal-text-color-hover: var(--zeal-gray-1);
     --zeal-text-color-active: var(--zeal-gray-1);
     --zeal-button-wave-color: var(--zeal-warning-6);
+
+    &#{$self}--text,
+    &#{$self}--dashed,
+    &#{$self}--ghost {
+      --zeal-text-color: var(--zeal-warning-6);
+      --zeal-text-color-hover: var(--zeal-warning-5);
+      --zeal-text-color-active: var(--zeal-warning-7);
+    }
   }
 
   &--error {
@@ -155,18 +148,39 @@ $namespace: "z";
     --zeal-text-color-hover: var(--zeal-gray-1);
     --zeal-text-color-active: var(--zeal-gray-1);
     --zeal-button-wave-color: var(--zeal-error-6);
+
+    &#{$self}--text,
+    &#{$self}--dashed,
+    &#{$self}--ghost {
+      --zeal-text-color: var(--zeal-error-6);
+      --zeal-text-color-hover: var(--zeal-error-5);
+      --zeal-text-color-active: var(--zeal-error-7);
+    }
+  }
+
+  &--dashed &__border {
+    border-style: dashed;
+  }
+
+  &--dashed {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      --zeal-button-bg-color: var(--zeal-white);
+      --zeal-button-bg-color-hover: var(--zeal-white);
+      --zeal-button-bg-color-active: var(--zeal-white);
+    }
   }
 
   &--ghost {
-    background-color: transparent;
-
-    &:hover {
-      background-color: rgb(255 255 255 / 10%);
-    }
-
+    &,
+    &:hover,
+    &:focus,
     &:active,
-    &:focus {
-      background-color: rgb(255 255 255 / 10%);
+    &.active {
+      background: none !important;
     }
   }
 
@@ -176,6 +190,15 @@ $namespace: "z";
 
   &--circle {
     border-radius: var(--zeal-border-radius-circle);
+  }
+
+  &--text {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      background: none !important;
+    }
   }
 
   &--block {

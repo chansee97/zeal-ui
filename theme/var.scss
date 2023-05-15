@@ -4,11 +4,13 @@
   --zeal-border-radius-round: 999px;
   --zeal-border-radius-circle: 50%;
 
+  /* opacity */
+  --zeal-opacity-disabled:0.5;
+
   /* primary */
   --zeal-primary-color: var(--zeal-brand-color-6);       /* 无状态 */
   --zeal-primary-color-hover: var(--zeal-brand-color-4); /* hover */
   --zeal-primary-color-focus: var(--zeal-brand-color-5); /* focus态，包括鼠标和键盘 */
-
   --zeal-primary-color-active: var(--zeal-brand-color-8);   /* 点击态 */
   --zeal-primary-color-disabled: var(--zeal-brand-color-3); /* 禁用态 */
 

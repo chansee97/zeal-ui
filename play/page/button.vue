@@ -2,6 +2,14 @@
 import { ref } from 'vue'
 
 const _disabled = ref(0)
+
+const _loading = ref(false)
+function startLoading() {
+  _loading.value = true
+  setTimeout(() => {
+    _loading.value = false
+  }, 4000)
+}
 </script>
 
 <template>
@@ -56,11 +64,8 @@ const _disabled = ref(0)
       button
     </z-button>
     <z-button circle />
-    <p>disabled | nativeType | strong | tag</p>
+    <p>nativeType | strong | tag</p>
     <div>
-      <z-button disabled @click="_disabled++">
-        disabled
-      </z-button>{{ _disabled }}
       <z-button native-type="submit">
         nativeType
       </z-button>
@@ -116,6 +121,56 @@ const _disabled = ref(0)
       </z-button>
       <z-button dashed type="error">
         error
+      </z-button>
+    </div>
+    <p>disabled</p>
+    <div>
+      <z-button disabled type="default" @click="_disabled++">
+        default
+      </z-button>
+      <z-button disabled type="primary" @click="_disabled++">
+        primary
+      </z-button>
+      <z-button disabled type="success" @click="_disabled++">
+        success
+      </z-button>
+      <z-button disabled type="info" @click="_disabled++">
+        info
+      </z-button>
+      <z-button disabled type="warning" @click="_disabled++">
+        warning
+      </z-button>
+      <z-button disabled type="error" @click="_disabled++">
+        error
+      </z-button>
+      {{ _disabled }}
+    </div>
+
+    <p>text</p>
+    <div>
+      <z-button text type="default">
+        default
+      </z-button>
+      <z-button text type="primary">
+        primary
+      </z-button>
+      <z-button text type="success">
+        success
+      </z-button>
+      <z-button text type="info">
+        info
+      </z-button>
+      <z-button text type="warning">
+        warning
+      </z-button>
+      <z-button text type="error">
+        error
+      </z-button>
+    </div>
+    <p>Loading</p>
+    <div>
+      <z-button :loading="_loading" @click="startLoading">
+        Loading
       </z-button>
     </div>
   </div>

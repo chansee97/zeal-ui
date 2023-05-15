@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import { zeal } from '../packages/components/index'
+import { zeal } from '@zeal-ui/components'
 import App from './App.vue'
 import { router } from './router'
 

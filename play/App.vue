@@ -19,6 +19,8 @@ const navLinks = [
     component dev test <z-button @click="toggleDark">
       dark:{{ isDark }}
     </z-button>
+
+    <z-hello />
   </h1>
 
   <div class="demo-container">

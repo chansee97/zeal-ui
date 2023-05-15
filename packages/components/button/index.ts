@@ -1,4 +1,5 @@
-import Button from './button.vue'
+import Button from './button'
+
 import './style.scss'
 
 export { Button }
