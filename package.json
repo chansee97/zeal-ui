@@ -20,14 +20,14 @@
   "devDependencies": {
     "@chansee97/eslint-config-vue": "^0.2.0",
     "@chansee97/stylelint-config": "^0.2.0",
-    "@types/node": "^20.1.1",
+    "@types/node": "^20.1.4",
     "eslint": "^8.38.0",
-    "lint-staged": "^13.2.1",
+    "lint-staged": "^13.2.2",
     "sass": "^1.62.1",
     "simple-git-hooks": "^2.8.1",
     "stylelint": "^15.6.1",
     "typescript": "^5.0.4",
-    "vue": "^3.2.47"
+    "vue": "^3.3.2"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
