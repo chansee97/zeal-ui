@@ -6,11 +6,20 @@
 
 <p>基于Ts和Vue3的组件库</p>
 
----
-
-###  Intro
+##  Intro
 基于Ts和Vue3的组件库
 
-### Features
+## Features
 
+## Install
+It is recommended to use pnpm or yarn to install:
+```
+pnpm add zeal-ui
+```
+
+## Document
+[click here](zeal-ui-docs.vercel.app)
+
+## License
+Zeal UI is licensed under the [MIT](https://opensource.org/license/mit/) license.
   
