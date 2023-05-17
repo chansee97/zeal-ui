@@ -5,9 +5,6 @@ export default defineConfig({
   title: "Zeal UI",
   titleTemplate: 'Zeal',
   description: "Zeal UI docs site",
-  // 打包目录
-  outDir: '../dist',
-
   srcDir: './src',
   head: [
     // 添加图标
