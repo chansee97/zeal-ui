@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 import { Loading, Wave } from '../_private'
 import { prefix } from '../config'
 import type { ButtonProps } from './props'

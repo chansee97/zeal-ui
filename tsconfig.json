@@ -7,8 +7,6 @@
     "moduleResolution": "node", // 按照node模块来解析
     "esModuleInterop": true, // ⽀持es6,commonjs模块
     "jsx": "preserve", // jsx 不转
-    "jsxFactory": "h",
-    "jsxFragmentFactory": "Fragment",
     "target": "ESNext", // 遵循es6版本
     "sourceMap": true,
     "lib": [
@@ -24,7 +22,7 @@
     "types": ["node"] // sfc 添加 name属性的包需要的
   },
   "include": [
-    "packages/*",
+    "packages",
     "play",
   ],
   "exclude": [
