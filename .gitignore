@@ -3,10 +3,10 @@ node_modules
 dist
 .idea
 *.log
+.vitepress/cache
 
 yarn.lock
 package-lock.json
-
 
 .yarn/cache
 .yarn/unplugged

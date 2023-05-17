@@ -23,6 +23,10 @@
     "skipLibCheck": true, // 跳过类库检测
     "types": ["node"] // sfc 添加 name属性的包需要的
   },
+  "include": [
+    "packages/*",
+    "play",
+  ],
   "exclude": [
     // 排除掉哪些类库
     "node_modules"
