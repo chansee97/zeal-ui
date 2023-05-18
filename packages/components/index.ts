@@ -3,7 +3,7 @@ import { Input } from './input'
 import { Button } from './button'
 import { Progress } from './progress'
 
-import '../../theme/index.scss'
+import '../../style/index.scss'
 
 export * from './components'
 
