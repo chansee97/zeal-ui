@@ -4,6 +4,7 @@ dist
 .idea
 *.log
 .vitepress/cache
+coverage
 
 yarn.lock
 package-lock.json

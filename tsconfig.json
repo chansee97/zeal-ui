@@ -25,6 +25,12 @@
       "zeal-ui": ["./components"]
     }
   },
+  "include": [
+    "packages/**/*",
+    "docs",
+    "play",
+    "types"
+  ],
   "exclude": [
     // 排除掉哪些类库
     "node_modules",
