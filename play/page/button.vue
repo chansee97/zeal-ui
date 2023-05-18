@@ -3,6 +3,8 @@
 
 <template>
   <div>
-    button
+    <z-button type="primary">
+      button
+    </z-button>
   </div>
 </template>

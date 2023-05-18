@@ -31,3 +31,31 @@ features:
     icon: 🧶
 ---
 
+<VPTeamPageTitle>
+    <!-- <template #title>
+      Our Team
+    </template> -->
+    <template #lead>
+      贡献者  
+    </template>
+  </VPTeamPageTitle>
+
+  <VPTeamMembers size="small" :members="data" />
+
+
+<script setup>
+import { VPTeamPageTitle,VPTeamMembers } from 'vitepress/theme'
+
+const data = [
+  {
+    avatar: 'https://www.github.com/chansee97.png',
+    name: 'Rock Chen',
+    title: 'Creator',
+    desc: '总想做点什么',
+    links: [
+      { icon: 'github', link: 'https://github.com/chansee97' },
+    ],
+  },
+]
+
+</script>
