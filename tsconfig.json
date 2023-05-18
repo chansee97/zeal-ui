@@ -9,6 +9,7 @@
     "jsx": "preserve", // jsx 不转
     "target": "ESNext", // 遵循es6版本
     "sourceMap": true,
+    "noImplicitAny": true,
     "lib": [
       // 编译时⽤的库
       "ESNext",
@@ -19,12 +20,11 @@
     "resolveJsonModule": true, // 解析json模块
     "strict": true, // 是否启动严格模式
     "skipLibCheck": true, // 跳过类库检测
-    "types": ["node"] // sfc 添加 name属性的包需要的
+    "types": ["node"], // sfc 添加 name属性的包需要的
+    "paths": {
+      "zeal-ui": ["./components"]
+    }
   },
-  "include": [
-    "packages",
-    "play",
-  ],
   "exclude": [
     // 排除掉哪些类库
     "node_modules",

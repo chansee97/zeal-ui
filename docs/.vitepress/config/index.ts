@@ -9,7 +9,7 @@ export default defineConfig({
     root: {
       label: '简体中文',
       lang: 'zh-CN',
-      link: '/zh/',
+      link: '/',
       ...zhConfig
     },
     en: {

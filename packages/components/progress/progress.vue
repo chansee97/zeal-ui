@@ -7,7 +7,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 defineOptions({
-  name: 'Progress',
+  name: 'ZProgress',
 })
 </script>
 

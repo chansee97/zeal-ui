@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, normalizeClass, ref } from 'vue'
 import { Loading, Wave } from '../_private'
+import type { WaveRef } from '../_private'
 import { prefix } from '../config'
 import type { ButtonProps } from './props'
 
@@ -25,18 +26,36 @@ const emit = defineEmits<{
 }>()
 
 defineOptions({
-  name: 'Btn',
+  name: 'ZButton',
 })
 
-const waveRef = ref()
+const waveRef = ref<WaveRef | null>(null)
 function handleClick(e: MouseEvent) {
   if (props.disabled)
     return
 
-  waveRef.value.play()
+  waveRef.value?.play()
 
   emit('click', e)
 }
+const mergedPrefixCls = computed(() => `${prefix}-btn`)
+const classes = computed(() => {
+  const prefixCls = mergedPrefixCls.value
+  return normalizeClass({
+    [prefixCls]: true,
+    [`${prefixCls}--${props.size}`]: true,
+    [`${prefixCls}--${props.type}`]: true,
+    [`${prefixCls}--round`]: props.round,
+    [`${prefixCls}--circle`]: props.circle,
+    [`${prefixCls}--block`]: props.block,
+    [`${prefixCls}--ghost`]: props.ghost,
+    [`${prefixCls}--dashed`]: props.dashed,
+    [`${prefixCls}--strong`]: props.strong,
+    [`${prefixCls}--disabled`]: props.disabled || props.loading,
+    [`${prefixCls}--text`]: props.text,
+
+  })
+})
 </script>
 
 <template>
@@ -46,19 +65,7 @@ function handleClick(e: MouseEvent) {
     :aria-disabled="disabled" :disabled="disabled"
     :autofocus="autofocus"
     class="z-btn"
-    :class="[
-      `${prefix}-btn`,
-      `${prefix}-btn--${props.size}`,
-      `${prefix}-btn--${props.type}`,
-      props.round && `${prefix}-btn--round`,
-      props.circle && `${prefix}-btn--circle`,
-      props.block && `${prefix}-btn--block`,
-      props.ghost && `${prefix}-btn--ghost`,
-      props.dashed && `${prefix}-btn--dashed`,
-      props.strong && `${prefix}-btn--strong`,
-      (props.disabled || props.loading) && `${prefix}-btn--disabled`,
-      props.text && `${prefix}-btn--text`,
-    ]"
+    :class="classes"
     @click="handleClick "
   >
     <Loading :show="props.loading" />

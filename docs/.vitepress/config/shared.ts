@@ -13,10 +13,14 @@ export const sharedConfig = defineConfig({
       light: 'min-light',
       dark: 'min-dark',
     },
-    lineNumbers: true,
+    anchor: {
+      level:2
+    },
+    toc: {
+      level: [2, 3, 4]
+    }
   },
   themeConfig: {
-    lastUpdatedText: 'Last Updated',
     logo: '/logo.svg',
     search: {
       provider: 'local'

@@ -5,11 +5,10 @@ import { Progress } from './progress'
 
 import '../../theme/index.scss'
 
+export * from './components'
+
 const components = [
   Input, Button, Progress,
 ]
 
 export const zeal = buildInstall(components)
-export * from './button'
-export * from './input'
-export * from './progress'

@@ -35,7 +35,7 @@ export const buttonProps = {
 }
 
 export default defineComponent({
-  name: 'Button',
+  name: 'ZButton',
   props: buttonProps,
   emits: ['click'],
   setup(props, { slots, emit }) {
@@ -77,8 +77,8 @@ export default defineComponent({
         ]}
         onClick={this.handleClick}
       >
-        {this.slots.default ? this.slots.default() : ''}
         <Loading show={this.props.loading} />
+        {this.slots.default ? this.slots.default() : ''}
         {!this.props.text && <div aria-hidden="true" class={`${prefix}-btn__border`} />}
         {!this.props.text && <Wave ref="waveRef" />}
       </Component>

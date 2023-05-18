@@ -1,4 +1,5 @@
 import type { DefaultTheme, LocaleSpecificConfig } from 'vitepress'
+import packages from '../../package.json'
 
 export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
   description: "Zeal UI 文档站点",
@@ -7,6 +8,7 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
       pattern: 'https://github.com/chansee97/zeal-ui/edit/main/packages/docs/:path',
       text: '对本页提出修改建议',
     },
+    lastUpdatedText: '最后更新时间',
     outlineTitle: '本页内容',
     nav: [
       { text: '首页', link: '/' },
@@ -14,7 +16,7 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
       { text: '组件', link: '/components/button' },
       { text: '演练场', link: 'https://play.vuejs.org' },
       {
-        text: '0.0.1', items: [
+        text: packages.version, items: [
           { text: 'issue', link: 'https://github.com/chansee97/zeal-ui/issues' },
       ] },
     ],
@@ -33,5 +35,9 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
         }
       ]
     },
+    docFooter: {
+      prev: '前一篇',
+      next: '下一篇'
+    }
   }
 }

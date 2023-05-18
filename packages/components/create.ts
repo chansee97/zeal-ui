@@ -1,18 +1,16 @@
-import type { App, DefineComponent } from 'vue'
+import type { App } from 'vue'
 
-type Components = DefineComponent<Record<string, unknown>, Record<string, unknown>, any>[]
+interface Component {
+  name: string
+}
 
 interface localConfig {
   prefix?: string
 }
-export function buildInstall(components: Components = []) {
-  return function install(app: App, config: localConfig = {}) {
-    const {
-      prefix = 'Z',
-    } = config
-
+export function buildInstall(components: Component[] = []) {
+  return function install(app: App, _config: localConfig = {}) {
     components.forEach((component) => {
-      app.component(`${prefix}${component.name}`, component)
+      app.component(component.name, component)
     })
   }
 }

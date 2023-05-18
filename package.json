@@ -5,22 +5,33 @@
   "description": "",
   "author": "chansee97",
   "license": "MIT",
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chansee97zeal-ui"
+  },
+  "keywords": [
+    "zeal-ui",
+    "component library",
+    "ui framework",
+    "ui",
+    "vue"
+  ],
   "main": "index.js",
   "scripts": {
     "dev:play": "pnpm -C play dev --open",
-    "dev:docs": "pnpm -C packages/docs dev",
+    "dev:docs": "pnpm -C docs dev",
     "lint": "eslint . --fix"
   },
   "dependencies": {
     "@vueuse/core": "^10.1.2",
-    "@zeal-ui/components": "workspace:^",
-    "@zeal-ui/hooks": "workspace:^"
+    "@zeal-ui/utils": "workspace:^",
+    "@zeal-ui/components": "workspace:^"
   },
   "devDependencies": {
     "@chansee97/eslint-config-vue": "^0.3.0",
     "@chansee97/stylelint-config": "^0.3.0",
     "@types/node": "^20.1.7",
+    "@vitejs/plugin-vue": "^4.1.0",
     "@vitejs/plugin-vue-jsx": "^3.0.1",
     "eslint": "^8.38.0",
     "lint-staged": "^13.2.2",
@@ -28,6 +39,7 @@
     "simple-git-hooks": "^2.8.1",
     "stylelint": "^15.6.2",
     "typescript": "^5.0.4",
+    "vite": "^4.3.5",
     "vue": "^3.3.2"
   },
   "simple-git-hooks": {
