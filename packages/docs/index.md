@@ -12,16 +12,16 @@ hero:
   actions:
     - theme: brand
       text: 开始使用
-      link: /zh/guide/
+      link: /guide/
     - theme: alt
       text: 组件
-      link: /zh/components/button
+      link: /components/button
 
 features:
   - title: 全面拥抱 Composition API
     details: 从源码到文档
     icon: 🧩
-    link: /zh/guide/
+    link: /guide/
     linkText: Getting Started
   - title: TypeScript
     details: 完全使用 TypeScript 开发，提供完整的类型定义

@@ -4,14 +4,14 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
   description: "Zeal UI 文档站点",
   themeConfig: {
     editLink: {
-      pattern: 'https://github.com/chansee97/zeal-ui/edit/main/packages/docs/zh/:path',
+      pattern: 'https://github.com/chansee97/zeal-ui/edit/main/packages/docs/:path',
       text: '对本页提出修改建议',
     },
     outlineTitle: '本页内容',
     nav: [
-      { text: '首页', link: '/zh/' },
-      { text: '指南', link: '/zh/guide/' },
-      { text: '组件', link: '/zh/components/button' },
+      { text: '首页', link: '/' },
+      { text: '指南', link: '/guide/' },
+      { text: '组件', link: '/components/button' },
       { text: '演练场', link: 'https://play.vuejs.org' },
       {
         text: '0.0.1', items: [
@@ -19,16 +19,16 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
       ] },
     ],
     sidebar: {
-      '/zh/guide/': [
-         { text: '介绍', link: '/zh/guide/' },
-         { text: '安装', link: '/zh/guide/start' },
-         { text: '全局配置', link: '/zh/guide/config' },
+      '/guide/': [
+         { text: '介绍', link: '/guide/' },
+         { text: '安装', link: '/guide/start' },
+         { text: '全局配置', link: '/guide/config' },
       ],
-      '/zh/components/': [
+      '/components/': [
         {
           text: '组件',
           items: [
-            { text: '按钮', link: '/zh/components/button' },
+            { text: '按钮', link: '/components/button' },
           ]
         }
       ]
