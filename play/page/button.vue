@@ -3,7 +3,7 @@
 
 <template>
   <div>
-    <z-button type="primary">
+    <z-button type="primary" native-type="reset">
       button
     </z-button>
   </div>

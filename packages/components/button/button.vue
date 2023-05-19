@@ -38,9 +38,10 @@ function handleClick(e: MouseEvent) {
 
   emit('click', e)
 }
+
 const mergedPrefixCls = computed(() => `${prefix}-btn`)
+const prefixCls = mergedPrefixCls.value
 const classes = computed(() => {
-  const prefixCls = mergedPrefixCls.value
   return normalizeClass({
     [prefixCls]: true,
     [`${prefixCls}--${props.size}`]: true,
@@ -61,16 +62,15 @@ const classes = computed(() => {
 <template>
   <component
     :is="props.tag"
-    :type="nativeType" :role="nativeType"
-    :aria-disabled="disabled" :disabled="disabled"
-    :autofocus="autofocus"
-    class="z-btn"
+    :type="props.nativeType" :role="props.nativeType"
+    :aria-disabled="props.disabled" :disabled="props.disabled"
+    :autofocus="props.autofocus"
     :class="classes"
-    @click="handleClick "
+    @click="handleClick"
   >
     <Loading :show="props.loading" />
     <slot name="default" />
-    <div v-if="!props.text" aria-hidden="true" :class="[`${prefix}-btn__border`]" />
+    <div v-if="!props.text" aria-hidden="true" :class="[`${prefixCls}__border`]" />
     <Wave v-if="!props.text" ref="waveRef" />
   </component>
 </template>
