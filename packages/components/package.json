@@ -1,15 +1,21 @@
 {
   "name": "@zeal-ui/components",
   "version": "0.0.1",
-  "description": "",
+  "description": "A UI Component Library",
   "main": "index.ts",
   "module": "index.ts",
+  "files": [
+    "es",
+    "lib",
+    "dist",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
   "scripts": {
-    "build": "vite build",
-    "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "build": "vite build"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "MIT"
 }

@@ -1,14 +1,12 @@
 import { buildInstall } from './create'
-import { Input } from './input'
-import { Button } from './button'
-import { Progress } from './progress'
+import { ZInput } from './input'
+import { ZButton } from './button'
+import { ZProgress } from './progress'
 
 import '../../style/index.scss'
 
-export * from './components'
-
-const components = [
-  Input, Button, Progress,
+export const components = [
+  ZInput, ZButton, ZProgress,
 ]
 
 export const zeal = buildInstall(components)

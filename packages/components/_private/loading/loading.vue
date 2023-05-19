@@ -15,25 +15,3 @@ const props = withDefaults(defineProps<Props>(), {
     </i>
   </div>
 </template>
-
-<style scoped>
-.z-loading{
-  display: inline-block;
-  width: 1.2em;
-  height: 1.2em;
-  margin-right: 8px;
-}
-
-.z-icon{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-
-.z-icon > svg {
-  width: 100%;
-  height: 100%;
-}
-</style>

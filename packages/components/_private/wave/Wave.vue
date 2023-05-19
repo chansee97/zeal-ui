@@ -37,12 +37,3 @@ defineExpose({
 <template>
   <div ref="selfRef" aria-hidden="true" class="z-wave" />
 </template>
-
-<style>
-.z-wave{
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  border-radius: inherit;
-}
-</style>

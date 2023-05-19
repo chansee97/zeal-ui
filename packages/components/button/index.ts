@@ -1,6 +1,7 @@
-import Button from './button.vue'
+import ZButton from './button.vue'
 
 import './style.scss'
 
-export { Button }
-export { Button as ZButton }
+export { ZButton }
+
+export type { ButtonSize, ButtonType, ButtonNativeType, ButtonProps } from './type'
