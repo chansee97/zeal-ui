@@ -1,40 +1,34 @@
 {
   "compilerOptions": {
+    "target": "ESNext", // 遵循es6版本
     "module": "ESNext", // 打包模块类型ESNext
     "declaration": false, // 默认不要声明⽂件
     "removeComments": true, // 删除注释
     "importHelpers": true,
     "moduleResolution": "node", // 按照node模块来解析
     "esModuleInterop": true, // ⽀持es6,commonjs模块
-    "jsx": "preserve", // jsx 不转
-    "target": "ESNext", // 遵循es6版本
-    "sourceMap": true,
+    "jsx": "preserve", // jsx
+    "sourceMap": false,
     "noImplicitAny": true,
-    "lib": [
-      // 编译时⽤的库
-      "ESNext",
-      "DOM"
-    ],
     "allowSyntheticDefaultImports": true, // 允许没有导出的模块中导⼊
     "experimentalDecorators": true, // 装饰器语法
     "resolveJsonModule": true, // 解析json模块
     "strict": true, // 是否启动严格模式
     "skipLibCheck": true, // 跳过类库检测
-    "types": ["node","vite/client"], // sfc 添加 name属性的包需要的
+    "lib": [
+      // 编译时⽤的库
+      "ESNext",
+      "DOM"
+    ],
+    "types": ["node", "vite/client"], // sfc 添加 name属性的包需要的
     "paths": {
       "zeal-ui": ["./components"]
     }
   },
-  "include": [
-    "packages/**/*",
-    "packages/docs",
-    "play",
-    "types"
-  ],
+  "include": ["packages/**/*", "packages/docs", "play", "types"],
   "exclude": [
     // 排除掉哪些类库
     "node_modules",
-    // "**/__tests__",
     "dist/**"
   ]
 }

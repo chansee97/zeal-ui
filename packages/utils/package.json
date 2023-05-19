@@ -1,7 +1,22 @@
 {
   "name": "@zeal-ui/utils",
   "version": "0.0.1",
-  "description": "",
-  "main": "index.ts",
-  "module": "index.ts"
+  "private": false,
+  "description": "zeal-ui/utils",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "test": "vitest"
+  }
 }
