@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./packages/docs/public/zeal-ui.svg"  width="180" style="width: 180px;"/>
+  <img src="./packages/docs/public/logo.svg"  width="180" style="width: 180px;"/>
 </p>
 
 <h1 align="center">Zeal-UI</h1>
@@ -19,6 +19,13 @@ pnpm add zeal-ui
 
 ## Document
 [click here](zeal-ui-docs.vercel.app)
+
+## Contributors
+
+<a href="https://github.com/chansee97/zeal-ui/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=chansee97/zeal-ui" />
+</a>
+
 
 ## License
 Zeal UI is licensed under the [MIT](https://opensource.org/license/mit/) license.
