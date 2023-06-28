@@ -18,16 +18,15 @@
   ],
   "main": "index.js",
   "scripts": {
-    "dev:play": "pnpm -C play dev --open",
+    "dev": "pnpm -C play dev --open",
     "dev:docs": "pnpm -C  packages/docs dev",
     "build": "pnpm -C packages/components build",
     "test": "vitest",
     "test:cover": "vitest run --coverage",
-    "lint": "eslint . --fix"
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@zeal-ui/components": "workspace:^",
-    "@zeal-ui/utils": "workspace:^"
+
   },
   "devDependencies": {
     "@chansee97/eslint-config-vue": "^0.3.1",

@@ -5,18 +5,23 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 
 const rollupOptions = {
   external: ['vue', /\.scss/],
-  input: ['src/index.ts'],
+  input: ['./index.ts'],
   output: [
     {
-      // 打包格式
+      format: 'umd',
+      entryFileNames: '[name].js',
+      name: 'index',
+      dir: '../../dist/dist',
+      globals: {
+        vue: 'Vue',
+      },
+    },
+    {
       format: 'es',
-      // 打包后文件名
       entryFileNames: '[name].mjs',
-      // 让打包目录和我们目录对应
       preserveModules: true,
       exports: 'named',
-      // 配置打包根目录
-      dir: './dist/es',
+      dir: '../../dist/es',
       globals: {
         vue: 'Vue',
       },
@@ -26,7 +31,7 @@ const rollupOptions = {
       entryFileNames: '[name].cjs',
       preserveModules: true,
       exports: 'named',
-      dir: './dist/lib',
+      dir: '../../dist/lib',
       globals: {
         vue: 'Vue',
       },
@@ -53,7 +58,7 @@ export default defineConfig({
   ],
   esbuild: esbuildOptions,
   build: {
-    sourcemap: true,
+    sourcemap: false,
     minify: false, // Disable Obfuscation
     commonjsOptions: {
       sourceMap: false,
@@ -62,7 +67,7 @@ export default defineConfig({
     // @ts-expect-error: error type
     rollupOptions,
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
+      entry: resolve(__dirname, 'index.ts'),
       name: 'zeal',
     },
   },

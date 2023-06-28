@@ -3,13 +3,6 @@ lockfileVersion: '6.0'
 importers:
 
   .:
-    dependencies:
-      '@zeal-ui/components':
-        specifier: workspace:^
-        version: link:packages/components
-      '@zeal-ui/utils':
-        specifier: workspace:^
-        version: link:packages/utils
     devDependencies:
       '@chansee97/eslint-config-vue':
         specifier: ^0.3.1
@@ -81,6 +74,12 @@ importers:
       '@vueuse/core':
         specifier: ^10.1.2
         version: 10.1.2(vue@3.3.4)
+      '@zeal-ui/components':
+        specifier: workspace:^
+        version: link:../packages/components
+      '@zeal-ui/utils':
+        specifier: workspace:^
+        version: link:../packages/utils
       vue-router:
         specifier: ^4.1.6
         version: 4.1.6(vue@3.3.4)
@@ -1485,17 +1484,6 @@ packages:
       vue: 3.3.2
     dev: true
 
-  /@vue/server-renderer@3.3.2(vue@3.3.4):
-    resolution: {integrity: sha512-QCwh6OGwJg6GDLE0fbQhRTR6tnU+XDJ1iCsTYHXBiezCXAhqMygFRij7BiLF4ytvvHcg5kX9joX5R5vP85++wg==}
-    peerDependencies:
-      vue: 3.3.2
-    dependencies:
-      '@vue/compiler-ssr': 3.3.2
-      '@vue/shared': 3.3.2
-      vue: 3.3.4
-    dev: true
-    optional: true
-
   /@vue/server-renderer@3.3.4(vue@3.3.4):
     resolution: {integrity: sha512-Q6jDDzR23ViIb67v+vM1Dqntu+HUexQcsWKhhQa4ARVzxOY2HbC7QRW/ggkDBd5BU+uM1sV6XOAP0b216o34JQ==}
     peerDependencies:
@@ -1524,8 +1512,8 @@ packages:
       js-beautify: 1.14.6
       vue: 3.3.4
     optionalDependencies:
-      '@vue/compiler-dom': 3.3.2
-      '@vue/server-renderer': 3.3.2(vue@3.3.4)
+      '@vue/compiler-dom': 3.3.4
+      '@vue/server-renderer': 3.3.4(vue@3.3.4)
     dev: true
 
   /@vueuse/core@10.1.2(vue@3.3.2):
